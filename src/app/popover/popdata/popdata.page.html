@@ -1,0 +1,46 @@
+
+<div  class='pop-content' padding>
+    <ion-grid text-right >
+        <ion-row> 
+          <ion-item lines='none'>
+            <ion-card-title text-center class="headers"><h3 >{{candidatData.name}}</h3></ion-card-title>
+          </ion-item> 
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-text class="candidateID">{{candidatData.id}}</ion-text></ion-col>
+        <ion-col><ion-title float-right class="headers">:תז</ion-title></ion-col>
+      </ion-row>
+      <ion-row  >
+        <ion-col><ion-text class="candidateLisens">{{candidatData.phone}}</ion-text></ion-col>
+        <ion-col> <ion-title float-right class="headers">:פאלפון</ion-title></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-title float-right class="headers">:אימייל</ion-title>
+          <br/>
+          <ion-text float-left class="candidateLisens">{{candidatData.email}}</ion-text>
+        </ion-col>
+        <!-- <ion-col><ion-title class="headers">:אימייל</ion-title></ion-col> -->
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-text class="candidateLisens">{{candidatData.lisens}}</ion-text></ion-col>
+        <ion-col><ion-title float-right class="headers">:מס' רשיון</ion-title></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-text class="candidateLisens">{{date}}</ion-text></ion-col>
+        <ion-col><ion-title float-right class="headers">:התחלה</ion-title></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-text class="candidateLisens">{{candidatData.job}}</ion-text></ion-col>
+        <ion-col><ion-title float-right class="headers">:עבור תפקיד</ion-title></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-text class="candidateLisens">{{standard}}</ion-text></ion-col>
+        <ion-col><ion-title float-right class="headers">:סוג תפקיד</ion-title></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-text class="candidateLisens">{{candidatData.setingUser}}</ion-text></ion-col>
+        <ion-col><ion-title  float-right class="headers">:נרשם ע"י</ion-title></ion-col>
+      </ion-row>
+  </ion-grid>
+</div>

@@ -1,0 +1,15 @@
+<ion-content  padding dir=rtl>
+    <ion-item class="passwordBox"  >
+        <ion-label stacked>סיסמה</ion-label>
+        <ion-input type="password"  [(ngModel)]="input"  required="required"></ion-input>
+    </ion-item>
+    <div padding text-center float-center>
+      <ion-button class = "submit" mode='ios' (click)="submitLogin()">כניסה</ion-button>
+    </div>
+</ion-content>
+
+<ion-footer text-center float-center mode='ios' >
+  <ion-text><strong>AmitJas</strong></ion-text> 
+  &copy;
+  <ion-text><strong>KarinM</strong></ion-text>
+</ion-footer>

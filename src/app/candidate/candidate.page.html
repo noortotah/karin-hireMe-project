@@ -1,0 +1,62 @@
+<ion-header id="header">
+  <ion-toolbar mode='ios'>
+      <ion-icon float-right name="arrow-round-forward" (click)='station.navFunction(1)' ></ion-icon>
+      <ion-icon float-center mode='ios' id='home' name="home" (click)='station.navFunction(2)'></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding >
+  <ion-card class="candidateData">
+    <ion-card-header text-right > 
+      <ion-grid>
+          <ion-row> 
+            <ion-item  lines='none'>
+              <ion-card-title class="headers" *ngIf='currCandidate != null'><h3 >{{currCandidate.name}}</h3></ion-card-title>
+            </ion-item> 
+        </ion-row>
+        <ion-row>
+          <ion-col><ion-card-title class="candidateLisens" *ngIf='currCandidate != null' >{{currCandidate.phone}}</ion-card-title></ion-col>
+          <ion-col> <ion-card-title class="headers">:פאלפון</ion-card-title></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><ion-text text-right class="candidateID" *ngIf='currCandidate != null'>{{currCandidate.email}}</ion-text></ion-col>
+          <ion-col><ion-card-title text-right class="headers">:מייל</ion-card-title></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card-title *ngIf='currCandidate != null && currCandidate.standard == 1' class="candidateLisens">תקן</ion-card-title>
+            <ion-card-title *ngIf='currCandidate != null && currCandidate.standard == 2' class="candidateLisens">מ"מ</ion-card-title>
+          </ion-col>
+          <ion-col><ion-card-title class="headers">:סוג משרה</ion-card-title></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><ion-card-title class="candidateLisens">{{tempDate}}</ion-card-title></ion-col>
+          <ion-col><ion-card-title class="headers">:תחילת תהליך</ion-card-title></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-icon id='alert' name="alert" (click)='presentPopover($event)' ></ion-icon>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+  </ion-card>
+    <ion-card text-right class="station" *ngFor="let station of candidateStationList; let i = index"  (click) ="stationRouting(i,station.name)"  >
+        <ion-card-header> 
+          <ion-row>
+            <ion-col>
+              <ion-card-title class="stationName">{{station.name}}
+                <ion-card-title float-left *ngIf='!station.finish' >{{station.progress}}%</ion-card-title>
+                <ion-card-title float-left *ngIf='station.finish' >
+                    <ion-icon id='checkmark' name="checkmark"></ion-icon>
+                </ion-card-title>
+              </ion-card-title>
+            </ion-col>
+          </ion-row>
+        </ion-card-header>
+      </ion-card>
+      <ion-button expand="block" strong color='danger' (click) = 'presentAlertConfirm()' >סגירת מועמד</ion-button>
+     </ion-content>
+
+
+
+
+    

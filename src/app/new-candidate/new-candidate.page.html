@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center >מועמד חדש</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item text-right lines="inset">
+          <ion-label position="floating">שם מלא</ion-label>
+          <ion-input type="text" [(ngModel)]="name" name="fistname" required="required"></ion-input>
+        </ion-item>
+        <ion-item lines="inset" >
+            <ion-label text-right position="floating">מס' ת.ז</ion-label>
+            <ion-input type="number" [(ngModel)]="id" maxlength=10 name="ID" required="required"></ion-input>
+        </ion-item >
+        <ion-item text-right lines="inset">
+            <ion-label position="floating">שם משרה </ion-label>
+            <ion-input type="text" [(ngModel)]="job" name="job" required="required"></ion-input>
+        </ion-item>
+        <ion-list>
+            <div text-right class="subNote">סוג משרה</div>
+            <ion-label class='ffff' >תקן</ion-label>
+            <ion-checkbox mode='ios' (ionFocus) = 'setR(2)'></ion-checkbox>
+            <ion-label class='ffff' >ממלא מקום</ion-label>
+            <ion-checkbox mode='ios' (ionFocus) = 'setR(1)'></ion-checkbox>
+        </ion-list>
+        <ion-item class="subNote_t" text-right lines="inset" >
+            <ion-label position="floating">עבור</ion-label>
+            <ion-input type="text" [(ngModel)]="standardName" name="standardName" required="required"></ion-input>
+        </ion-item>
+        <ion-item text-right lines="inset" >
+            <ion-label position="floating">מס' רשיון עבודה</ion-label>
+            <ion-input type="number" [(ngModel)]="lisens" name="lisens" required="required"></ion-input>
+        </ion-item>
+        <ion-item lines="inset">
+            <ion-label text-right position="floating">פלאפון</ion-label>
+            <ion-input type="tel" [(ngModel)]="phone" name="Phone" required="required"></ion-input>
+        </ion-item>
+        <ion-item lines="inset" >
+            <ion-input type="email" [(ngModel)]="email" name="email" required="required"></ion-input>
+            <ion-label text-right >אימייל</ion-label>
+        </ion-item>
+        <ion-item lines="inset" > 
+            <ion-datetime [(ngModel)]="strtProcess"  display-format="DD/MM/YYYY"></ion-datetime>
+            <ion-label text-right >תחילת תהליך</ion-label>
+        </ion-item>
+        <ion-button ion-button color="primary" text-center expand="block" round (click)="addCandidate()">שמור</ion-button>
+    </ion-list>
+</ion-content>

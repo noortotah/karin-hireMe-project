@@ -1,0 +1,33 @@
+$haedline-color:  rgb(26, 98, 252);
+
+ion-list{
+    border-radius: 14px;
+    padding-bottom: 5px;
+
+    ion-checkbox{
+        margin: 10px 20px -10px 5px;
+    }
+}
+
+ion-item{
+    ion-label{
+        margin: 0px 8px 6px 0px;
+        font-size: 17px;
+       
+    }
+}
+
+ion-button{
+    margin: 30px 10px 10px 10px;
+}
+
+.ffff{
+    margin: 0px 10px 0px 50px;
+}
+
+.subNote{
+    font-size:  20px;
+    color: $haedline-color;
+    margin: 28px 12px 0px 0px;
+}
+

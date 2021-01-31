@@ -1,0 +1,39 @@
+$haedline-color:  rgb(26, 98, 252);
+
+ion-list{
+
+    border-radius: 14px;
+    margin-bottom: 20px;
+    //height: -webkit-fill-available;
+
+    ion-checkbox{
+        margin: 10px 20px -10px 5px;
+    }
+}
+
+
+ion-item{
+    
+    margin-top: 5px;
+    ion-label{
+        margin-right: 10px;
+    }
+
+    ion-card-title{
+        margin: 20px 0px 20px 0px;
+    }
+
+    ion-note{
+        margin-right: 10px;
+    }
+    
+    strong{
+        font-size: 17px;
+        margin-left: 10px;
+    }
+
+    ion-text{
+        float: right;
+    }
+}
+

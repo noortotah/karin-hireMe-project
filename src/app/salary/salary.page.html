@@ -1,0 +1,84 @@
+<ion-header id="header">
+    <ion-toolbar mode='ios'>
+        <ion-icon float-right name="arrow-round-forward" (click)='station.navFunction(1)' ></ion-icon>
+        <ion-icon float-center mode='ios' id='home' name="home" (click)='station.navFunction(2)'></ion-icon>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+      <ion-list text-right>
+          <ion-card-title class="note" text-center >בשלב זה יש לשלוח למועמד הצעת שכר</ion-card-title>
+          <ion-item text-right>
+            <ion-label> {{candidateName}} </ion-label>
+            <ion-label><strong>הצעה עבור</strong></ion-label>
+          </ion-item>
+            <ion-list>
+              <div text-right class="subNote">:סמן כי התקבלו הקבצים</div>
+              <ion-item>
+                  <ion-label text-right>תעודת מקצוע</ion-label>
+                  <ion-checkbox 
+                      mode='ios' 
+                      [checked]='setCertificate' 
+                      slot="start" value="biff" 
+                      (ionFocus)='setRdiuoForms("certificate")'>
+                  </ion-checkbox>
+              </ion-item>
+              <ion-item>
+                  <ion-label text-right>קורות חיים</ion-label>
+                  <ion-checkbox 
+                      mode='ios' 
+                      [checked]='setCv' 
+                      slot="start" value="biff" 
+                      (ionFocus)='setRdiuoForms("cv")'>
+                  </ion-checkbox>
+              </ion-item>
+              <ion-item>
+                  <ion-label text-right>ותק תעסוקתי</ion-label>
+                  <ion-checkbox 
+                      mode='ios' 
+                      [checked]='setSeniority' 
+                      slot="start" value="biff" 
+                      (ionFocus)='setRdiuoForms("seniority")'>
+                  </ion-checkbox>
+              </ion-item>
+              <ion-item>
+                  <ion-label text-right>ותק צבאי/שירות לאומי</ion-label>
+                  <ion-checkbox 
+                      mode='ios' 
+                      [checked]='setArmy' 
+                      slot="start" value="biff" 
+                      (ionFocus)='setRdiuoForms("army")'>
+                  </ion-checkbox>
+              </ion-item>
+            </ion-list>
+            <div text-right class="subNote">:שלב משאבי אנוש</div>     
+            <ion-item text-right> 
+                <ion-datetime display-format="DD/MM/YYYY"  [(ngModel)]="hrSendDate" (ionFocus)='saveSalary(hrSendDate,1)'></ion-datetime>
+                <ion-label text-right>תאריך שליחה למ"א</ion-label>
+                <ion-note  *ngIf='userHrSend' text-right class="userUp" >עודכן ע"י: {{userHrSend}}</ion-note>
+            </ion-item>
+            <ion-item text-right> 
+                <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="hrReturnDate" (ionFocus)='saveSalary(hrReturnDate,2)' required="required"></ion-datetime>
+                <ion-label text-right>תאריך קבלה ממ"א</ion-label>
+                <ion-note  *ngIf='userHrReturn' text-right class="userUp" >עודכן ע"י: {{userHrReturn}}</ion-note>
+            </ion-item>
+            <div text-right class="subNote">:שלב המועמד </div>
+            <ion-item text-right> 
+                <ion-datetime display-format="DD/MM/YYYY"  [(ngModel)]="candidateSendDate" (ionFocus)='saveSalary(candidateSendDate,3)' required="required"></ion-datetime>
+                <ion-label text-right>תאריך שליחה למועמד</ion-label>
+                <ion-note  *ngIf='userCanddiateSend' text-right class="userUp" >עודכן ע"י: {{userCanddiateSend}}</ion-note>
+            </ion-item>
+            <ion-item text-right> 
+                <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="candidateReturnDate" (ionFocus)='saveSalary(candidateReturnDate,4)' required="required"></ion-datetime>
+                <ion-label text-right>תאריך קבלה מועמד</ion-label>
+                <ion-note  *ngIf='userCanddiateReturn' text-right class="userUp" >עודכן ע"י: {{userCanddiateReturn}}</ion-note>
+            </ion-item>
+            <ion-item>
+                <ion-toggle mode='ios' 
+                [(ngModel)]="answer" 
+                (ionChange)='saveSalary(answer,5)'
+                [checked]='answer' ></ion-toggle>
+                <ion-label text-right >?התקבלה תשובה חיובית</ion-label>
+            </ion-item>
+      </ion-list>
+  </ion-content>

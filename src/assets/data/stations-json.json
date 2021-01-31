@@ -1,0 +1,40 @@
+{
+    "name": "stationsArray",
+    "number": "5",
+
+    "stations": [
+        {
+            "number": "1",
+            "name_e": "interview",
+            "name_h": "ראיון אישי",
+            "actions": "4"
+        },
+        {
+            "number": "2",
+            "name_e": "psifas-test",
+            "name_h": "מבחן פסיפס",
+            "actions": "6"
+        },
+        {
+            "number": "3",
+            "name_e": "salary",
+            "name_h": "הצעת שכר",
+            "actions": "9"
+        },
+        {
+            "number": "4",
+            "name_e": "forms",
+            "name_h": "חובקן טפסים",
+            "actions": "17"
+        },
+        {
+            "number": "5",
+            "name_e": "open-systems",
+            "name_h": "פתיחת מועמד במערכת",
+            "actions": "14"
+        }
+    ] 
+   
+   
+}
+

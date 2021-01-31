@@ -1,0 +1,25 @@
+.allCandidates{
+    --background: white;
+    --color: white;
+}
+
+ion-toolbar ion-icon {
+    margin: 7px 0px 0px 0px;
+}
+
+#checkmark{
+    color: green;
+    font-size: 20px;
+}
+
+#close{
+    color: red;
+    font-size: 20px;
+}
+#subTitle{
+    background-color: white;
+    font-size: 25px;
+    width: 75%;
+    margin: 20% 0% 0% 12%;
+    border-radius: 19px;
+}

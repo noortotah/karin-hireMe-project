@@ -1,0 +1,108 @@
+<ion-header id="header">
+    <ion-toolbar mode='ios'>
+        <ion-icon float-right name="arrow-round-forward" (click)='station.navFunction(1)' ></ion-icon>
+        <ion-icon float-center mode='ios' id='home' name="home" (click)='station.navFunction(2)'></ion-icon>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <ion-list text-right> 
+      <ion-card-title class="note" text-center > יש לשלוח למועמד את הטפסים הבאים</ion-card-title>
+    <ion-item >       
+      <ion-datetime  [(ngModel)]="sendDate" (ionFocus)='setDate(sendDate,1)' display-format="DD/MM/YYYY"></ion-datetime>
+      <ion-label text-right >נשלח למועמד בתאריך</ion-label> 
+      <ion-note  *ngIf='sendDate' text-right class="userUp" >עודכן ע"י: {{userNameSend}}</ion-note>
+    </ion-item>
+    <ion-item>  
+        <ion-datetime [(ngModel)]="returnDate" (ionFocus)='setDate(returnDate,2)' display-format="DD/MM/YYYY"></ion-datetime>
+        <ion-label text-right >חזר מהמועמד בתאריך</ion-label>
+        <ion-note *ngIf='returnDate' text-right class="userUp" >עודכן ע"י: {{ userNameReturn }}</ion-note>
+    </ion-item>
+    <ion-list id="formList"> 
+          <div text-right class="subNote">סמן את הטפסים שחזרו</div>
+        <ion-item>
+            <ion-label text-right>טופס 101</ion-label>
+            <ion-checkbox mode='ios' [checked]='radioArr[0]' slot="start" value="biff" (ionFocus)='setRdiuoForms("f_1",1)'></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label text-right>פרטים אישיים - עובד חדש</ion-label>
+            <ion-checkbox mode='ios' [checked]='radioArr[1]' slot="start" value="biff"  (ionFocus)='setRdiuoForms("f_2",2)' ></ion-checkbox>
+            <!-- <ion-note *ngIf='f_2' text-right class="userUp" >עודכן ע"י: {{setf_2}}  </ion-note> -->
+        </ion-item>
+        <ion-item>
+            <ion-label  text-right >הצהרת בריאות</ion-label>
+            <ion-checkbox mode='ios' [checked]='radioArr[2]' slot="start" value="biff" (ionFocus)='setRdiuoForms("f_3",3)' ></ion-checkbox>
+            <!-- <ion-note *ngIf='f_3' text-right class="userUp" >עודכן ע"י: {{setf_3}}  </ion-note> -->
+        </ion-item>
+        <ion-item>
+            <ion-label  text-right >שמירת סודיות</ion-label>
+            <ion-checkbox  mode='ios' [checked]='radioArr[3]' slot="start" value="biff"  (ionFocus)='setRdiuoForms("f_4",4)' ></ion-checkbox>
+            <!-- <ion-note *ngIf='f_4' text-right class="userUp" >עודכן ע"י: {{setf_4}}  </ion-note> -->
+        </ion-item>
+        <ion-item>
+          <ion-label  text-right >ניגוד עניינים</ion-label>
+          <ion-checkbox  mode='ios' [checked]='radioArr[4]' slot="start" value="biff"  (ionFocus)='setRdiuoForms("f_5",5)' ></ion-checkbox>
+          <!-- <ion-note *ngIf='f_5' text-right class="userUp" >עודכן ע"י: {{setf_5}}  </ion-note> -->
+        </ion-item>
+        <ion-item>
+          <ion-label  text-right >שעת חירום</ion-label>
+          <ion-checkbox  mode='ios' [checked]='radioArr[5]' slot="start" value="biff"  (ionFocus)='setRdiuoForms("f_6",6)' ></ion-checkbox>
+          <!-- <ion-note *ngIf='f_6' text-right class="userUp" >עודכן ע"י: {{setf_6}}  </ion-note> -->
+        </ion-item>
+        <ion-item>
+          <ion-label  text-right >קצובת נסיעה</ion-label>
+          <ion-checkbox  mode='ios' [checked]='radioArr[6]' slot="start" value="biff"  (ionFocus)='setRdiuoForms("f_7",7)' ></ion-checkbox>
+          <!-- <ion-note *ngIf='setf_7' text-right class="userUp" >עודכן ע"י: {{setf_7}}  </ion-note> -->
+        </ion-item>
+        <ion-item>
+          <ion-label  text-right >הצטרפות לפנסיה</ion-label>
+          <ion-checkbox  mode='ios' [checked]='radioArr[7]' slot="start" value="biff"  (ionFocus)='setRdiuoForms("f_8",8)' ></ion-checkbox>
+          <!-- <ion-note *ngIf='f_' text-right class="userUp" >עודכן ע"י: {{setf_8}}  </ion-note> -->
+        </ion-item>
+        <ion-item>
+          <ion-label  text-right >הצטרפות קרן השתלמות</ion-label>
+          <ion-checkbox  mode='ios' [checked]='radioArr[8]' slot="start" value="biff"  (ionFocus)='setRdiuoForms("f_9",9)' ></ion-checkbox>
+          <!-- <ion-note *ngIf='f_9' text-right class="userUp" >עודכן ע"י: {{setf_9}}  </ion-note> -->
+        </ion-item>
+        <ion-item>
+          <ion-label  text-right >הצטרפות לביטוח מנהלים</ion-label>
+          <ion-checkbox  mode='ios' [checked]='radioArr[9]' slot="start" value="biff"  (ionFocus)='setRdiuoForms("f_10",10)' ></ion-checkbox>
+          <!-- <ion-note *ngIf='f_10' text-right class="userUp" >עודכן ע"י: {{setf_10}}  </ion-note> -->
+        </ion-item>
+        <ion-item>
+          <ion-label  text-right >ביטוח בריאות קבוצתי</ion-label>
+          <ion-checkbox  mode='ios' [checked]='radioArr[10]' slot="start" value="biff"  (ionFocus)='setRdiuoForms("f_11",11)' ></ion-checkbox>
+          <!-- <ion-note *ngIf='f_11' text-right class="userUp" >עודכן ע"י: {{setf_11}}  </ion-note> -->
+        </ion-item>
+        <ion-item>
+          <ion-label  text-right >כרטיס עובד </ion-label>
+          <ion-checkbox  mode='ios' [checked]='radioArr[11]' slot="start" value="biff"  (ionFocus)='setRdiuoForms("f_12",12)' ></ion-checkbox>
+          <!-- <ion-note *ngIf='f_12' text-right class="userUp" >עודכן ע"י: {{setf_12}}  </ion-note> -->
+        </ion-item>
+        <ion-item>
+          <ion-label  text-right >ימי מנוחה לזכאים</ion-label>
+          <ion-checkbox  mode='ios' [checked]='radioArr[12]' slot="start" value="biff"  (ionFocus)='setRdiuoForms("f_13",13)' ></ion-checkbox>
+          <!-- <ion-note *ngIf='f_13' text-right class="userUp" >עודכן ע"י: {{setf_13}}  </ion-note> -->
+        </ion-item>
+        <ion-item>
+          <ion-label  text-right >שאלון לעובד</ion-label>
+          <ion-checkbox  mode='ios' [checked]='radioArr[13]' slot="start" value="biff"  (ionFocus)='setRdiuoForms("f_14",14)' ></ion-checkbox>
+          <!-- <ion-note *ngIf='f_14' text-right class="userUp" >עודכן ע"י: {{setf_14}}  </ion-note> -->
+        </ion-item>
+    </ion-list>
+    <ion-item lines="none">
+        <ion-label  text-right >הוסף טופס</ion-label>
+    </ion-item>
+    <ion-item class="moreform">
+      <ion-button small  (click)='addFrom()'>הוסף</ion-button>
+      <ion-textarea text-right [(ngModel)]="newForm" placeholder="שם הטופס"></ion-textarea>
+    </ion-item>
+    <ion-item lines="none" >
+        <ion-toggle mode='ios' 
+        [(ngModel)]="hrOK" 
+        (ionChange)='setDate(hrOK,3)'
+        [checked]='hrOK' ></ion-toggle>  
+        <ion-label  text-right>?אושר ע"י משאבי אנוש</ion-label>
+    </ion-item>  
+  </ion-list>
+</ion-content>

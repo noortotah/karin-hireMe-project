@@ -1,0 +1,62 @@
+$haedline-color:  rgb(26, 98, 252);
+
+
+.headers{
+    color: $haedline-color;
+}
+
+h3{
+    margin-left: 71px;
+}
+
+.dataCol{
+    padding-top: 52px;
+}
+
+.candidateData{
+    --background: white;
+}
+
+.station{
+    --background: white;
+    --color: white;
+}
+
+.headerColTitle{
+   
+    --color: white;
+}
+
+#pathArrow{
+    color: rgb(20, 111, 247);
+    
+   
+}
+
+#alert{
+   --ion-margin-top: 5px;
+   font-size: 23px;
+}
+
+#checkmark{
+    color: green;
+}
+
+ion-button{
+    font-size: 23px;
+}
+
+.secondary{
+    text-align: center;
+}
+
+ion-toolbar{
+    ion-icon{
+        font-size: 23px;
+        margin: 7px 20px 0px 0px;
+    }
+}
+
+#home{
+    margin-left: 168px;
+ }

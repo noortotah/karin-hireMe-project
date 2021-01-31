@@ -1,0 +1,42 @@
+<ion-header text-center>
+  <ion-toolbar>
+    <ion-title>{{department}}
+      <ion-icon float-right name="arrow-round-forward" (click)='station.navFunction(2)' ></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card text-right class="allCandidates" *ngFor="let candidate of allCandidates;"  (click) ="goToCandidate(candidate)"  >
+      <ion-card-header> 
+        <ion-row>
+          <ion-col>
+            <ion-card-title class="stationName">{{candidate.name}}
+              <ion-card-title float-left >{{candidate.progress}}%</ion-card-title>
+            </ion-card-title>
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+  </ion-card>
+  <ion-card text-right class="allCandidates" *ngFor="let close of closeCandidate;"    >
+      <ion-card-header *ngIf="close.department == department" > 
+        <ion-row>
+          <ion-col>
+            <ion-card-title float-left >
+                <ion-icon float-left name="trash"
+                (click) ="permanentlyDelete(close)" ></ion-icon>
+            </ion-card-title>
+          </ion-col>
+          <ion-col>
+            <ion-card-title (click) ="closedAlert(close)" color="danger" class="stationName">{{close.name}}
+            </ion-card-title>
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" (click) ="goToNewCandidate()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

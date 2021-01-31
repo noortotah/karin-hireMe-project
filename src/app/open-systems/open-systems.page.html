@@ -1,0 +1,82 @@
+<ion-header id="header">
+    <ion-toolbar mode='ios'>
+        <ion-icon float-right name="arrow-round-forward" (click)='station.navFunction(1)' ></ion-icon>
+        <ion-icon float-center mode='ios' id='home' name="home" (click)='station.navFunction(2)'></ion-icon>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <ion-list>
+      <ion-card-title class="note" text-center >:המועמד התקבל, יש לבצע תהליכים אלו</ion-card-title>
+    <ion-item>
+      <ion-label text-right>קוד כניסה ראשי</ion-label>
+      <ion-checkbox mode='ios'  slot="start" value="biff" [checked]='radioArr[0]' (ionFocus)='setRdiuoForms("sf_1")'></ion-checkbox>
+      <!-- <ion-note *ngIf='setSf_1' text-right class="userUp" >עודכן ע"י: {{setSf_1}}  </ion-note> -->
+    </ion-item>
+    <ion-item>
+        <ion-label text-right>מייל קופה</ion-label>
+        <ion-checkbox  mode='ios'  slot="start" value="biff" [checked]='radioArr[1]' (ionFocus)='setRdiuoForms("sf_2")' ></ion-checkbox>
+        <!-- <ion-note *ngIf='f102' text-right class="userUp" >עודכן ע"י: {{set102}}  </ion-note> -->
+    </ion-item>
+    <ion-item>
+        <ion-label  text-right >400AS כניסת</ion-label>
+        <ion-checkbox mode='ios' [checked]='radioArr[2]' slot="start" value="biff" (ionFocus)='setRdiuoForms("sf_3")' ></ion-checkbox>
+        <!-- <ion-note *ngIf='f103' text-right class="userUp" >עודכן ע"י: {{set103}}  </ion-note> -->
+    </ion-item>
+    <ion-item>
+        <ion-label  text-right >חילנט</ion-label>
+        <ion-checkbox  mode='ios' slot="start" value="biff" [checked]='radioArr[3]' (ionFocus)='setRdiuoForms("sf_4")' ></ion-checkbox>
+        <!-- <ion-note *ngIf='f104' text-right class="userUp" >עודכן ע"י: {{set104}}  </ion-note> -->
+    </ion-item>
+    <ion-item>
+        <ion-label  text-right >יומן תורים</ion-label>
+        <ion-checkbox  mode='ios' slot="start" value="biff" [checked]='radioArr[4]' (ionFocus)='setRdiuoForms("sf_5")' ></ion-checkbox>
+        <!-- <ion-note *ngIf='f104' text-right class="userUp" >עודכן ע"י: {{set104}}  </ion-note> -->
+    </ion-item>
+    <ion-item>
+        <ion-label  text-right >תוכנת התפתחות הילד</ion-label>
+        <ion-checkbox  mode='ios' slot="start" value="biff" [checked]='radioArr[5]' (ionFocus)='setRdiuoForms("sf_6")' ></ion-checkbox>
+        <!-- <ion-note *ngIf='f104' text-right class="userUp" >עודכן ע"י: {{set104}}  </ion-note> -->
+    </ion-item>
+    <ion-item>
+        <ion-label  text-right >החתמת אצבע</ion-label>
+        <ion-checkbox  mode='ios' slot="start" value="biff" [checked]='radioArr[6]' (ionFocus)='setRdiuoForms("sf_7")' ></ion-checkbox>
+        <!-- <ion-note *ngIf='f104' text-right class="userUp" >עודכן ע"י: {{set104}}  </ion-note> -->
+    </ion-item>
+    <ion-item>
+        <ion-label  text-right >הוספה למייל קבוצת התחום</ion-label>
+        <ion-checkbox  mode='ios' slot="start" value="biff" [checked]='radioArr[7]' (ionFocus)='setRdiuoForms("sf_8")' ></ion-checkbox>
+        <!-- <ion-note *ngIf='f104' text-right class="userUp" >עודכן ע"י: {{set104}}  </ion-note> -->
+    </ion-item>
+    <ion-item>
+        <ion-label  text-right >שלט דלת</ion-label>
+        <ion-checkbox  mode='ios' slot="start" value="biff" [checked]='radioArr[8]' (ionFocus)='setRdiuoForms("sf_9")' ></ion-checkbox>
+        <!-- <ion-note *ngIf='f104' text-right class="userUp" >עודכן ע"י: {{set104}}  </ion-note> -->
+    </ion-item>
+    <ion-item>
+        <ion-label  text-right >הוספה לרשימת הטלפונים</ion-label>
+        <ion-checkbox  mode='ios' slot="start" value="biff" [checked]='radioArr[9]' (ionFocus)='setRdiuoForms("sf_10")' ></ion-checkbox>
+        <!-- <ion-note *ngIf='f104' text-right class="userUp" >עודכן ע"י: {{set104}}  </ion-note> -->
+    </ion-item>
+    <ion-item>
+        <ion-label  text-right >עותק תעודה לקלסר</ion-label>
+        <ion-checkbox  mode='ios' slot="start" value="biff" [checked]='radioArr[10]' (ionFocus)='setRdiuoForms("sf_11")' ></ion-checkbox>
+        <!-- <ion-note *ngIf='f104' text-right class="userUp" >עודכן ע"י: {{set104}}  </ion-note> -->
+    </ion-item>
+    <ion-item>
+        <ion-label  text-right >קבלת פנים</ion-label>
+        <ion-checkbox  mode='ios' slot="start" value="biff" [checked]='radioArr[11]' (ionFocus)='setRdiuoForms("sf_12")' ></ion-checkbox>
+        <!-- <ion-note *ngIf='f104' text-right class="userUp" >עודכן ע"י: {{set104}}  </ion-note> -->
+    </ion-item>
+    <ion-item>
+        <ion-label  text-right >הזמנת חותמת</ion-label>
+        <ion-checkbox  mode='ios' slot="start" value="biff" [checked]='radioArr[12]' (ionFocus)='setRdiuoForms("sf_13")' ></ion-checkbox>
+        <!-- <ion-note *ngIf='f104' text-right class="userUp" >עודכן ע"י: {{set104}}  </ion-note> -->
+    </ion-item>
+    <ion-item lines="none">
+        <ion-label  text-right > 400AS הדרכה ל</ion-label>
+        <ion-checkbox  mode='ios' slot="start" value="biff" [checked]='radioArr[13]' (ionFocus)='setRdiuoForms("sf_14")' ></ion-checkbox>
+        <!-- <ion-note *ngIf='f104' text-right class="userUp" >עודכן ע"י: {{set104}}  </ion-note> -->
+    </ion-item>
+  </ion-list>
+</ion-content>
