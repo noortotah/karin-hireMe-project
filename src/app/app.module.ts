@@ -17,7 +17,7 @@ import { environment } from '../environments/environment';
 
 
 // import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -42,6 +42,8 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
     PopdataPageModule
   ],
   providers: [
+    AngularFireModule,
+    AngularFirestore,
     StatusBar,
     SplashScreen,
     HomePage,
